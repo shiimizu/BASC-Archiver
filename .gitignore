@@ -76,6 +76,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+/venv
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -108,5 +109,11 @@ docs/_build/
 # PyBuilder
 target/
 
-# BASC-archiver
+# Default archive folder
 /archive
+
+# Local fuuka API for tests
+**/pyfuuka
+
+# Tests
+/tests

@@ -11,6 +11,8 @@ import time
 
 import requests
 
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36"
+headers = {'User-Agent': user_agent}
 
 def mkdirs(path):
     """Make directory, if it doesn't exist."""
@@ -27,7 +29,7 @@ def download_file(local_filename, url, clobber=False):
     mkdirs(dir_name)
 
     if clobber or not os.path.exists(local_filename):
-        i = requests.get(url)
+        i = requests.get(url, headers=headers)
 
         # if not exists
         if i.status_code == 404:
